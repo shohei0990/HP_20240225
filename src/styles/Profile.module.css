@@ -1,0 +1,310 @@
+
+/* レイアウト */
+.profile-container {
+    display: flex;
+    flex-direction: column; /* 要素を縦に並べる */
+    align-items: center;
+    justify-content: center;
+    /*height: auto;  コンテンツの高さに合わせる */
+    max-width: 1200px;
+}
+
+.profile-content {
+    display: flex;
+    flex-direction: row; /* 画像とプロフィール情報を横並びにする */
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 350px;
+}
+
+.profile-image {
+    flex: 1;
+    background-image: url('/5227.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 25px;
+    width:  auto; /* 幅を固定値で指定 */
+    height: 350px; /* 高さを自動調整 */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    position: relative; 
+}
+
+.profile-image2 {
+    flex: 1;
+    background-image: url('/skill5.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 25px;
+    width: auto; /* 幅を固定値で指定 */
+    height:  350px; /* 高さを自動調整 */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.profile-info {
+    flex: 1;
+    padding: 20px;
+}
+
+.profile-info h2 {
+    font-size: 28px; /* タイトルのフォントサイズ */
+    margin-bottom: 20px; /* タイトルの下の余白 */
+}
+
+.profile-info p {
+    font-size: 16px; /* フォントサイズを調整 */
+    color: #333; /* テキストの色を調整 */
+    line-height: 1.6; /* 行間を調整 */
+    margin-bottom: 20px; /* 下のマージンを調整 */
+}
+
+.button {
+    display: inline-block; /* インラインブロック要素として表示 */
+    background-color: #000; /* 背景色を黒に設定 */
+    color: #fff; /* テキスト色を白に設定 */
+    padding: 10px 20px; /* 内側の余白 */
+    text-align: center; /* テキストを中央揃えに */
+    text-decoration: none; /* テキストの下線を消す */
+    font-weight: bold; /* フォントを太字に */
+    border-radius: 5px; /* 角を丸く */
+    transition: background-color 0.3s; /* 背景色の変化を滑らかに */
+}
+
+.button:hover {
+    background-color: #444; /* ホバー時の背景色を暗く */
+}
+
+/* 以下、追加セクションのスタイル */
+.additional-section {
+    display: flex;
+    flex-direction: row; /* 画像とプロフィール情報を横並びにする */
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 400px;padding: 20px;
+}
+
+.additional-info {
+    flex: 1;
+    padding: 20px;
+}
+
+.additional-info p {
+    font-size: 16px; /* フォントサイズを調整 */
+    color: #333; /* テキストの色を調整 */
+    line-height: 1.6; /* 行間を調整 */
+    margin-bottom: 20px; /* 下のマージンを調整 */
+}
+
+.additional-info li {
+    margin-bottom: 10px;
+}
+
+.additional-text {
+    max-width: 600px;
+    text-align: center;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .profile-container {
+        flex-direction: column; /* 画面が狭い時は縦並びにする */
+        height: auto; /* 高さを自動調整 */
+    }
+
+    .profile-content, .additional-section {
+        flex-direction: column; /* これらの要素も縦並びにする */
+        height: auto; /* 高さを自動調整 */
+    }
+
+    .profile-image, .profile-image2 {
+        width: 80%; /* 画面が狭い時は幅を親要素の80%に */
+        height: auto; /* 高さを自動調整 */
+        margin: 0 auto; /* 中央寄せ */
+        min-height: 350px; /* 最小限の高さを設定 */
+    }
+
+    .profile-info, .additional-info {
+        /* 必要に応じてスタイルを調整 */
+        width: 100%; /* 幅を100%に */
+        text-align: center; /* テキストを中央揃えに */
+        padding: 20px; /* パディングを調整 */
+        order: 1; /* 画像よりも先に表示 */
+    }
+}
+
+/* ボタンUI  */
+.link-button {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    padding: 0.75rem 3rem; /* py-3 px-12 */
+    font-size: 1.125rem; /* text-lg */
+    font-weight: 500; /* font-medium */
+    text-decoration: none; /* Tailwind's default for links */
+    color: #11a9c7; /* text-indigo-600 */
+    border: 2px solid #11a9c7; /* border-2 border-indigo-600 */
+    border-radius: 9999px; /* rounded-full */
+    overflow: hidden;
+    transition: background-color 0.15s ease, color 0.15s ease; /* transition-all duration-400 ease */
+}
+
+.link-button:hover {
+color: #ffffff; /* hover:text-white */
+background-color: #f8fafc; /* hover:bg-gray-50 */
+}
+
+.link-button span.absolute {
+position: absolute;
+left: 0;
+top: 50%;
+width: 100%;
+height: 0;
+background-color: #138fb2; /* bg-indigo-600 */
+opacity: 1;
+transition: height 0.15s ease, top 0.15s ease; /* transition-all duration-400 ease */
+}
+
+.link-button:hover span.absolute {
+height: 100%; /* group-hover:h-full */
+top: 0; /* group-hover:top-0 */
+}
+
+.link-button span.icon-container {
+position: absolute;
+right: 0;
+display: flex;
+align-items: center;
+justify-content: start;
+width: 2.5rem; /* w-10 */
+height: 2.5rem; /* h-10 */
+transition: transform 0.15s ease; /* duration-300 ease */
+transform: translateX(100%);
+}
+
+.link-button:hover span.icon-container {
+transform: translateX(0); /* group-hover:translate-x-0 */
+}
+
+.link-button svg {
+width: 1.25rem; /* w-5 */
+height: 1.25rem; /* h-5 */
+fill: none;
+stroke: currentColor;
+stroke-width: 2;
+stroke-linecap: round;
+stroke-linejoin: round;
+}
+
+.link-button span.relative {
+position: relative;
+}
+
+/* ボタン UI2 */
+.link-button2 {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    padding: 0.75rem 1.5rem; /* パディングを調整 */
+    font-size: 1.125rem;
+    font-weight: 500;
+    justify-content: center;
+    text-align: center; /* テキストを中央揃えに */
+    text-decoration: none;
+    color: #11a9c7;
+    border: 2px solid #11a9c7;
+    border-radius: 9999px;
+    overflow: hidden;
+    transition: background-color 0.15s ease, color 0.15s ease;
+    min-width: 80px; /* 最小幅を設定 */
+    margin: 8px 4px; /* 上下にマージンを設定 */
+}
+.link-button2:hover {
+color: #ffffff; /* hover:text-white */
+background-color: #f8fafc; /* hover:bg-gray-50 */
+}
+
+.link-button2 span.absolute {
+position: absolute;
+left: 0;
+top: 50%;
+width: 100%;
+height: 0;
+background-color: #138fb2; /* bg-indigo-600 */
+opacity: 1;
+transition: height 0.15s ease, top 0.15s ease; /* transition-all duration-400 ease */
+}
+
+.link-button2:hover span.absolute {
+height: 100%; /* group-hover:h-full */
+top: 0; /* group-hover:top-0 */
+}
+
+.link-button2 span.icon-container {
+position: absolute;
+right: 0;
+display: flex;
+align-items: center;
+justify-content: start;
+width: 2.5rem; /* w-10 */
+height: 2.5rem; /* h-10 */
+transition: transform 0.15s ease; /* duration-300 ease */
+transform: translateX(100%);
+}
+
+.link-button2:hover span.icon-container {
+transform: translateX(0); /* group-hover:translate-x-0 */
+}
+
+.link-button2 svg {
+width: 1.25rem; /* w-5 */
+height: 1.25rem; /* h-5 */
+fill: none;
+stroke: currentColor;
+stroke-width: 2;
+stroke-linecap: round;
+stroke-linejoin: round;
+}
+
+.link-button2 span.relative {
+position: relative;
+}
+
+/* スキル表示 */
+
+.list-item {
+    list-style: none; /* 標準のリストスタイルを無効にする */
+    padding-left: 30px; /* 左側のパディングをリセット */
+    opacity: 0; /* 初期状態では完全に透明 */
+    visibility: hidden; /* 初期状態では完全に隠す */
+    transition: opacity 1s ease-out, visibility 1s ease-out; /* 透明度と可視性の変更にトランジションを適用 */
+}
+
+.list-item li {
+    position: relative; /* 疑似要素の基準点を設定 */
+    padding-left: 50px; /* テキストの開始位置を設定 */
+    text-align: left;
+}
+
+.list-item li::before {
+    content: '・'; /* カスタムの箇条書きの点 */
+    position: absolute;
+    left: 20px; /* 点の位置を調整 */
+    color: black; /* 点の色 */
+    font-weight: bold; /* フォントを太く */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        visibility: hidden;
+    }
+    to {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.fadeIn {
+    animation: fadeIn 0.7s ease-out forwards;
+}

@@ -1,0 +1,96 @@
+.nav {
+    /* 背景色を明るい色に変更 */
+    background-color: #f0f0f0;
+    /* ナビゲーションバーの高さを調整 */
+    height: 60px;
+    /* ナビゲーションバーの影を追加 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* フレックスボックス化 */
+    display: flex;
+    /* アイテムを左右に分散 */
+    justify-content: space-between;
+    /* アイテムを中央に配置 */
+    align-items: center;
+    /* 内側余白を左右に増やす */
+    padding: 0 90px; /* 例えば左右に40pxの余白 */
+}
+
+.nav .brand {
+    /* ブランド名のスタイル */
+    font-size: 20px;
+    color: #333;
+    /* 左側の余白を増やす */
+    padding-left: 60px; /* 例えば左に60pxの余白 */
+    /* 上下の内側余白を追加して高さを合わせる */
+    padding-top: 20px;
+    padding-bottom: 20px;
+    /* ブランド名をブロック要素として扱う */
+    display: block;
+
+}
+
+.nav ul {
+    /* 表示幅を自動に */
+    width: auto;
+    /* フレックスボックス化はそのまま */
+    display: flex;
+    /* 中央揃えから右揃えに */
+    justify-content: flex-end;
+    /* 先頭のポチをなくすはそのまま */
+    list-style: none;
+    align-items: center; /* 子要素を垂直方向に中央揃え */
+    /* 余白の自動調整はそのまま */
+    margin: 0;
+    /* 高さを親要素に合わせる */
+    height: 100%;
+    /* リンク間の余白を追加 */
+    gap: 20px;
+}
+
+.nav a {
+    /* アンダーライン削除はそのまま */
+    text-decoration: none;
+    /* 文字色を暗い色に変更 */
+    color: #333;
+    /* 内側余白を上下左右均等に設定 */
+    padding: 20px 15px;
+    /* ブロックにするはそのまま */
+    align-items: center;
+    justify-content: center;
+    height:15px; /* ナビゲーションバーの高さに合わせる */
+    display: block;
+    /* 文字を小さめに設定 */
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* 近似フォント */
+    font-size: 14px; /* 近似フォントサイズ */
+    /* フォントの太さを通常に */
+    font-weight: normal;
+}
+
+.nav a:hover {
+    /* マウスオーバーした時の文字色を変更 */
+    color: #017aff; /* ホバー時の色を変更 */
+}
+
+/* スマホ対応はそのまま */
+@media screen and (max-width: 640px) {
+    .nav {
+        /* スマホ時の背景色を変更 */
+        background-color: #f0f0f0;
+        /* スマホ時の高さを調整 */
+        height: auto; /* 高さを自動に */
+    }
+
+    .nav ul {
+        /* スマホ時は縦並びに */
+        flex-direction: column;
+        /* スマホ時のパディングを調整 */
+        padding: 0;
+    }
+
+    .nav li {
+        /* スマホ時のボーダーを調整 */
+        border-bottom: solid 1px #b0b3b2;
+        /* スマホ時のリンクの高さを調整 */
+        height: 50px; /* 各リンクの高さを指定 */
+    }
+}

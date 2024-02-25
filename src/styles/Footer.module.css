@@ -1,0 +1,40 @@
+.footer {
+    background-color: #333; /* フッターの背景色 */
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 30px; /* 上下に2remのパディングを追加 */
+    height: auto;
+}
+
+.footer .links {
+    display: flex;
+    gap: 10px; /* リンク間のギャップ */
+    font-size: 0.7rem; /* リンクのフォントサイズ */
+    margin-bottom: 2rem; /* コピーライトテキストとの間隔 */
+}
+
+.footer .links a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer .copyRight {
+    margin-top: 1rem; /* コピーライトテキストの上マージン */
+}
+
+
+/* スマホ対応 */
+@media screen and (max-width: 640px) {
+    .footer {
+        background-color: #0183a0; /* スマホ時の背景色を変更 */
+        flex-direction: column; /* スマホ時は縦並びに */
+        padding: 10px; /* スマホ時のパディングを調整 */
+        height: auto; /* スマホ時の高さを自動に */
+    }
+
+    .footer .socials {
+        margin-top: 10px; /* スマホ時のアイコンの上マージンを追加 */
+    }
+}

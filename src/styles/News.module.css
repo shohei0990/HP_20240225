@@ -1,0 +1,27 @@
+.news-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0 0 6rem 0;
+}
+
+.news-item {
+    border-bottom: 1px solid #ccc;
+    padding: 0.8rem 1.8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.news-item time {
+    margin-right: 4rem;
+    font-weight: normal;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+}
+
+.news-item span {
+    font-size: 0.85rem;
+    text-align: left;
+    flex-grow: 1;
+    padding-left: 1rem;
+}
